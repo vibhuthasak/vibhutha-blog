@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-us" class="wf-firasans-n4-active wf-active">
+	<head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Enable responsiveness on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    
+    
+    <meta name="generator" content="Hugo 0.40.1" />
+    
+    <title>Neural Style Transfer Explained &middot; Vibhutha Kumarage</title>
+    <meta content="Neural Style Transfer Explained - Vibhutha Kumarage" property="og:title">
+    <meta content=" - " property="og:description">
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
+    <link rel="stylesheet" href="http://vibhuthasak.github.io/css/print.css" media="print">
+    <link rel="stylesheet" href="http://vibhuthasak.github.io/css/poole.css">
+    <link rel="stylesheet" href="http://vibhuthasak.github.io/css/hyde.css">
+    <!-- Font-Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <!-- highlight.js-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <!-- Customised CSS -->
+    <link rel="stylesheet" href="http://vibhuthasak.github.io/css/custom.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+	</head>
+    <body>
+        <div class="sidebar">
+	<div class="container text-center sidebar-sticky">
+		<div class="sidebar-about text-center">
+			
+			 <img src="/img/mine.jpg" alt="Author Image" class="img-circle headshot center"> 
+			<h1 class="brand">Vibhutha Kumarage</h1>
+			<p class="lead">
+				 Mechatronic Engineer 
+			</p>
+		</div>
+		<body class="theme-base-0d">
+
+	<div>
+		<ul class="sidebar-nav">
+			
+			
+					<li>
+						<a href="/"> <span>Home</span></a>
+					</li>
+					<li>
+						<a href="/posts/"> <span>Posts</span></a>
+					</li>
+					<li>
+						<a href="/about/"> <span>About</span></a>
+					</li>
+			</li>
+		</ul>
+	</div>
+</body>
+		<p>
+			<br>
+			<br>
+		</p>
+
+		<p>
+		<section class="row text-center">
+	
+	<a href="https://twitter.com/vibhuthasak"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="https://facebook.com/vibhuthasak"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	&nbsp;<a href="https://github.com/vibhuthasak"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/vibhuthasak"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="https://stackoverflow.com/users/7029721/bodhi94"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="mailto:vkartz@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+        </p>
+		<p class="copyright">&copy; 2018 Vibhutha Kumarage
+		<br><a href="https://creativecommons.org/licenses/by/4.0">All Rights Reserved</a>.
+		<br/>Built with <a href="https://gohugo.io/">Hugo</a><a href="https://github.com/htr3n/hyde-hyde"></a>
+		</p>
+	</div>
+	<div>
+	</div>
+</div>
+
+        <div class="content container">
+            <div class="post">
+  <h1>Neural Style Transfer Explained</h1>
+  
+  <div class="col-sm-12 col-md-12">
+    <span class="text-left post-date meta">
+            
+       
+        <i class="fas fa-calendar-alt"></i> Apr 29, 2018
+      
+      
+      
+      
+
+      
+      <br/>
+      <i class="fas fa-clock"></i> 4 min read 
+      </span> 
+      
+  
+  </div>    
+  
+  
+
+<h1 id="neural-style-transfer">Neural Style Transfer</h1>
+
+<p>Welcome Everyone to the journey into Neural Style transfer. Are you ready ? Okay, Let&rsquo;s dive. 😃</p>
+
+<h2 id="level-one-introduction">Level one : Introduction</h2>
+
+<p>With the rise of Deep Learning technology people invented awesome things using this technology. Neural style transfer (aka Artistic style transfer) is one of the amazing works. It is introduced in 2015 by <a href="https://arxiv.org/abs/1508.06576">Gatys et al</a>. I&rsquo;m not going to make you sleepy by discussing details in the paper at this level. Let&rsquo;s talk about the things can be done using the technology. I believe you all like to draw your painting in your favorite artist&rsquo;s style. It not an easy task if you do not have enough skills in painting. Don&rsquo;t worry, Deep Learning have power to <a href="https://www.britannica.com/topic/reincarnation">reincarnate</a> your favorite artist and make him/her to draw your painting. Looking amazing right?. Let me show you an example. <br></p>
+
+<p>Here is your Image(In literature it is known as <strong>Content Image</strong>):</p>
+
+<p align="center">
+<img src="/nn_style/nn_content.png" alt="Content Image" />
+</p>
+
+<p>And this is your favorite artist&rsquo;s painting(Known as <strong>Style Image</strong>):</p>
+
+<p align="center">
+<img src="/nn_style/nn_style.png" alt="Style Image">
+</p>
+
+<blockquote>
+<p>Now Let&rsquo;s do the Magic ✨</p>
+</blockquote>
+
+<p>This the Resulted image:</p>
+
+<p align="center">
+<img src="/nn_style/nn_result.png" alt="Result Image">
+</p>
+
+<p>Looking great right?. Let&rsquo;s move to the <strong>level two</strong>.</p>
+
+<p><br></p>
+
+<h2 id="level-two-understanding-concepts">Level two : Understanding Concepts</h2>
+
+<p>From this level onwards you need to have some understanding in <strong>How Convolutional Neural Networks work</strong>. If you dont have, Don&rsquo;t feel worry here are some resources to learn CNNs.</p>
+
+<ol>
+<li><a href="https://cs231n.github.io/understanding-cnn/">Understanding CNN</a> (from cs231n)</li>
+<li><a href="https://www.youtube.com/watch?v=FTr3n7uBIuE">Convolutional Neural Networks</a> (by Siraj Ravel)</li>
+</ol>
+
+<p>For those who have understood CNN, follow me. Others, follow above links and See you in couple of days 👋</p>
+
+<p>In any Neural Network Based model there are three main components. Namely,</p>
+
+<ol>
+<li>Data.</li>
+<li>Network Architecture.</li>
+<li>Loss Function.</li>
+</ol>
+
+<p>Let&rsquo;s understand each components above and how they are related to our topic.</p>
+
+<h3 id="data"><strong>Data</strong></h3>
+
+<p>For this task we need three inputs. They are,</p>
+
+<ul>
+<li>Style Image (S_).</li>
+<li>Content Image (C_).</li>
+<li>Random Noise (G_).</li>
+</ul>
+
+<p>Both Style Image, Content Image are explained in level one. I hope you understood. Let&rsquo;s talk about <em>Random Noise</em>. In simple words, this is the initialization of the final generated image.</p>
+
+<p align="center">
+<img src="/nn_style/random_noise.png" alt="Random Noise">
+</p>
+
+<h3 id="network-architecture"><strong>Network architecture</strong></h3>
+
+<p>For this task we use pre-trained CNN such as VGG-16 / VGG-19.</p>
+
+<p align="center">
+<img src="/nn_style/vgg-16.png" alt="Random Noise">
+</p>
+
+<h3 id="loss-function"><strong>Loss Function</strong></h3>
+
+<p>The loss function for the whole operation is as follows,</p>
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?\Large&space; Loss(G)= \alpha*Loss(C,G) + \beta*Loss(S,G)" />
+</p>
+
+<ul>
+<li><em>Loss(G)</em> : Total Loss</li>
+<li><em>Loss(C,G)</em> : Content Loss</li>
+<li><em>Loss(S,G)</em> : Style Loss</li>
+<li><em>alpha</em> and <em>beta</em> are hyper parameters</li>
+</ul>
+
+<p>In a simplified way, neural style transfer can be expressed in 2 lines of steps.</p>
+
+<ol>
+<li>Initialize Generated Image(G) randomly (This is the noise image).</li>
+<li>Use an optimizer to minimize <em>Loss(G)</em> and update <strong>G</strong></li>
+</ol>
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?\Large&space; G = G - \gamma * \frac{d}{d(G)}(Loss(G))" />
+</p>
+
+<h4 id="content-loss">Content Loss</h4>
+
+<p>We will use layer[L] of the CNN to compute the content loss. The layer[L] should be taken layer neither too shallow nor too deep in the neural network. Now we feed both Content Image and Random Noise(Generated Image) into the CNN. We need to get activations of layer[L] for both Images. Let&rsquo;s say, <br>
+<strong><em>a[C]</em></strong> is the activation of the Content Image and <br>
+<strong><em>a[G]</em></strong> is the activation of the Generated Image at layer[L]</p>
+
+<p>if the difference between <em>a[C]</em> and <em>a[G]</em> is smaller, we can say that both Images have similar content. The metric we use to measure the difference is RMSE.</p>
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?\Large&space; Loss(C,G) = || a[C] - a[G] ||_F^2" />
+</p>
+
+<h4 id="style-loss">Style Loss</h4>
+
+<p>For Content Loss calculations we used only Layer[L]. <br>
+But In Style Loss Calculation we use multiple layers. But for now we look at how to calculate Style Loss in one layer(Layer[L]).<br>
+Like above, we need to feed both Style Image and Generated Image into our CNN and get their activations at the Layer[L]. Instead of calculating RMSE directly using those activations, we use something different in this case. That thing is, we are checking <strong>how activations are correlated across different channels in Layer[L]</strong>. In the literature it is known as <em>Gram Matrix</em> or <em>Style Matrix</em>. We need to calculate Gram Matrix for both Style and Generated Image. Gram Matrix calculation of ith and jth position of channel k in the Layer[L] for style activations is as follows.</p>
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?\Large&space; G_{ij}^{[L][S]} = \sum_k a_{ik}^{[S]} . a_{jk}^{[S]}" />
+</p>
+
+<p>i=(1 to nh), j=(1 to nw) and k=(1 to nc) <br></p>
+
+<p>After calculating Gram Matrix for both Style and Generated image, We use RMSE to calculate the difference at Layer[L]. It is similar what we do in Content Loss.</p>
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?\Large&space; Loss(S,G)^{[L]} = || G^{[S][L]} - G^{[G][L]} ||_F^2" />
+</p>
+
+<p>For more visually pleasing results we combine style costs for different layers.</p>
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?\Large&space; Loss(S,G) = \sum_l \lambda * Loss(S,G)^{[l]}" />
+</p>
+
+<p>Layer l = [conv1, conv2, conv3 &hellip;.. ]</p>
+
+<p>Now we can use following equation to calculate the Total Loss,</p>
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?\Large&space; Loss(G)= \alpha*Loss(C,G) + \beta*Loss(S,G)" />
+</p>
+
+<p>Use your favorite optimizer to minimize the total loss and Update the Noise Image.</p>
+
+<p>&mdash;&mdash;&mdash;END&mdash;&mdash;&ndash;</p>
+
+<p><br>
+<br>
+Thank you for coming this journey with me. See you in another post. Until then, Happy Learning!!</p>
+
+</div>
+            <div class="footer">
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+
+<div id="graphcomment"></div>
+<script type="text/javascript">
+  window.graphcomment_id = 'vibhutha-me';
+   
+  (function() {
+    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+    gc.src = 'https://graphcomment.com/js/integration.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+  })();
+</script>
+            </div>
+        </div>
+        
+        
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-118266759-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+        
+    </body>
+</html>

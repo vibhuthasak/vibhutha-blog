@@ -1,0 +1,51 @@
+baseURL = "http://vibhuthasak.github.io/"
+languageCode = "en-us"
+title = "Vibhutha Kumarage"
+theme = "hyde-hyde"
+#relativeURLs = false
+
+## Hugo Built-in Features
+# disqusShortname = "your-disqus-shortname"
+googleAnalytics = "UA-118266759-1"
+# enableRobotsTXT = true
+enableEmoji = true
+
+## Site Settings
+[params]
+    author = "Vibhutha Kumarage"
+    #title = "Vibhutha Kumarage"
+    description = "Mechatronic Engineer"
+    authorimage = "/img/mine.jpg"
+    dateformat = "Jan 2, 2006"
+    highlightjs = true
+    # highlightjsstyle = "github"
+    # please choose either GraphComment or Disqus
+    GraphCommentId = "vibhutha-me" 
+
+## Social Accounts
+[params.social]
+    github = "vibhuthasak"
+    linkedin = "vibhuthasak"
+    twitter = "vibhuthasak"
+    facebook = "vibhuthasak"
+    stackoverflow = "7029721/bodhi94"
+    email = "vkartz@gmail.com"
+
+## Main Menu
+
+[[menu.main]]
+    name = "Home"
+    weight = 100
+    identifier = "home"
+    url = "/"
+
+[[menu.main]]
+    name = "Posts"
+    weight = 100
+    identifier = "posts"
+    url = "/posts/"
+[[menu.main]]
+    name = "About"
+    identifier = "about"
+    weight = 200
+    url = "/about/"
