@@ -9,8 +9,8 @@ hugo
 echo -e "/mnt/e/vibhuthasak.github.io"
 shopt -s extglob
 # cd /media/vibhutha/Academic/vibhuthasak.github.io
-cd /mnt/e/vibhuthasak.github.io
-rm -rf -v -- !(CNAME)
+# cd /mnt/e/vibhuthasak.github.io
+# rm -rf -v -- !(CNAME)
 
 # Comming Backto VIBHUTHA-BLOG
 echo -e "Copying data"
