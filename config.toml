@@ -1,4 +1,4 @@
-baseURL = "http://vibhuthasak.github.io/"
+baseURL = "https://vibhuthasak.github.io/"
 languageCode = "en-us"
 title = "Vibhutha Kumarage"
 theme = "hyde-hyde"

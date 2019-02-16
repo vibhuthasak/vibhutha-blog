@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Vibhutha Kumarage</title>
-    <link>http://vibhuthasak.github.io/posts/</link>
+    <link>https://vibhuthasak.github.io/posts/</link>
     <description>Recent content in Posts on Vibhutha Kumarage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 29 Apr 2018 10:20:35 +0530</lastBuildDate>
     
-	<atom:link href="http://vibhuthasak.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vibhuthasak.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Neural Style Transfer Explained</title>
-      <link>http://vibhuthasak.github.io/posts/neural_style/</link>
+      <link>https://vibhuthasak.github.io/posts/neural_style/</link>
       <pubDate>Sun, 29 Apr 2018 10:20:35 +0530</pubDate>
       
-      <guid>http://vibhuthasak.github.io/posts/neural_style/</guid>
+      <guid>https://vibhuthasak.github.io/posts/neural_style/</guid>
       <description>Neural Style Transfer Welcome Everyone to the journey into Neural Style transfer. Are you ready ? Okay, Let&amp;rsquo;s dive. 😃
 Level one : Introduction With the rise of Deep Learning technology people invented awesome things using this technology. Neural style transfer (aka Artistic style transfer) is one of the amazing works. It is introduced in 2015 by Gatys et al. I&amp;rsquo;m not going to make you sleepy by discussing details in the paper at this level.</description>
     </item>
