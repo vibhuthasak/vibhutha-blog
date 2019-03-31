@@ -14,7 +14,7 @@ enableEmoji = true
 [params]
     author = "Vibhutha Kumarage"
     #title = "Vibhutha Kumarage"
-    description = "Mechatronic Engineer"
+    description = "Not a Random Guy"
     authorimage = "/img/mine.jpg"
     dateformat = "Jan 2, 2006"
     highlightjs = true
