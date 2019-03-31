@@ -4,9 +4,7 @@ date: 2018-04-29T10:20:35+05:30
 draft: false
 ---
 
-# Neural Style Transfer
-
-Welcome Everyone to the journey into Neural Style transfer. Are you ready ? Okay, Let's dive. :smiley:
+Welcome Everyone to the journey into Neural Style transfer. Let's dive. :smiley:
 
 ## Level one : Introduction
 With the rise of Deep Learning technology people invented awesome things using this technology. Neural style transfer (aka Artistic style transfer) is one of the amazing works. It is introduced in 2015 by [Gatys et al](https://arxiv.org/abs/1508.06576). I'm not going to make you sleepy by discussing details in the paper at this level. Let's talk about the things can be done using the technology. I believe you all like to draw your painting in your favorite artist's style. It not an easy task if you do not have enough skills in painting. Don't worry, Deep Learning have power to [reincarnate](https://www.britannica.com/topic/reincarnation) your favorite artist and make him/her to draw your painting. Looking amazing right?. Let me show you an example. <br>
