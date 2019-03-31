@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Vibhutha Kumarage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Apr 2018 10:20:35 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 31 Mar 2019 10:52:52 +0530</lastBuildDate>
     
 	<atom:link href="https://vibhuthasak.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Up and Running with Swift for Tensorflow on Ubuntu 18.04 LTS Bionic Beaver</title>
+      <link>https://vibhuthasak.github.io/posts/swift-tensorflow-guide/</link>
+      <pubDate>Sun, 31 Mar 2019 10:52:52 +0530</pubDate>
+      
+      <guid>https://vibhuthasak.github.io/posts/swift-tensorflow-guide/</guid>
+      <description>This blog post will guide through the process of install Swift for Tensorflow on Ubuntu 18.04 (Local Machine/VM instance) and Start Coding with Swift on the Jupyter Notebook like you do in Python for Tensorflow.
+Step 01: Installing CUDA There are several versions of Swift-TF available to install as you prefer. Namely (on 30th March 2019), CPU only version, CUDA 9.2 version and CUDA 10.0 version. This section is only focused on with CUDA installation.</description>
+    </item>
     
     <item>
       <title>Neural Style Transfer Explained</title>
