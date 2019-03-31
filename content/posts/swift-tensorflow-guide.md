@@ -58,7 +58,40 @@ Cuda compilation tools, release 10.0, V10.0.130
 ```
 **If this went fine, You can go to the next step :smiley:** <br/><br/>
 _If Case #2 (CUDA not installed) :_ <br/>
-To install CUDA on your machine properly, Go to [Tensorflow CUDA installation GUIDE](https://www.tensorflow.org/install/gpu#install_cuda_with_apt) and follow their instructions on CUDA 10.0 installation.<br/>
+To install CUDA on your machine properly, Go to [Tensorflow CUDA installation GUIDE](https://www.tensorflow.org/install/gpu#install_cuda_with_apt) and follow their instructions on CUDA v10.0 installation.<br/>
 **If this went fine, You can go to the next step :smiley:** <br/><br/>
 
 ### Step 02: Installing Swift for Tensorflow
+You can follow the *[Installation Guide](https://github.com/tensorflow/swift/blob/master/Installation.md#installation-1) on docs to install **but,**<br/>
+*According to my experience during the process, I suggest to follow below **Modified** steps which will help you in later steps and clean installation.<br/>
+
+* Go to your home directory.
+
+```console
+(base) vkartz@ubuntu-dl:~$
+```
+* Run below command to install required dependencies.
+
+```console
+(base) vkartz@ubuntu-dl:~$ sudo apt-get install clang libpython-dev libblocksruntime-dev
+```
+* Visit Swift for Tensorflow Installation page on GitHub to [download the latest binary release](https://github.com/tensorflow/swift/blob/master/Installation.md#releases) which is compatible with your CUDA version.
+Downloaded file looks like <br>_swift-tensorflow-RELEASE-0.2-cuda10.0-cudnn7-ubuntu18.04.tar_
+* Then create a directory on your home directory called **swift-toolchain** and extract the downloaded file to that directory. This will create ```~/swift-toolchain/usr``` directory 
+
+```console
+(base) vkartz@ubuntu-dl:~$ mkdir swift-toolchain
+(base) vkartz@ubuntu-dl:~$ tar -C swift-toolchain -xzf swift-tensorflow-RELEASE-0.2-cuda10.0-cudnn7-ubuntu18.04.tar.gz
+```
+* To check whether the installation completed. Go ```~/swift-toolchain/usr/bin``` directory and run ```./swift``` REPL like below.
+
+```console
+(base) vkartz@ubuntu-dl:~$ cd ~/swift-toolchain/usr/bin
+(base) vkartz@ubuntu-dl:~/swift-toolchain/usr/bin$ ./swift
+Welcome to Swift version 5.0-dev (LLVM dcb9eb74a7, Clang 95cdf7c9af, Swift 434442b530).
+Type :help for assistance.
+  1> print("Hello world")
+Hello world
+  2>
+```
+**If above steps went fine, You successfully installed swift and you can go to the next step :smiley:** <br/><br/>
