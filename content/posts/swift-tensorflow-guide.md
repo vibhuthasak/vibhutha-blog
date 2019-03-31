@@ -5,7 +5,7 @@ draft: true
 ---
 
 <p align="center">
-<img src="nn_style/titleImage.png" alt="Title Image"/>
+<img src="/nn_style/titleImage.png" alt="Title Image"/>
 </p>
 
 This blog post will guide through the process of install **Swift for Tensorflow** on Ubuntu 18.04 (Local Machine/VM instance) and Start Coding with **Swift** on the **Jupyter Notebook** like you do in **Python for Tensorflow**.
