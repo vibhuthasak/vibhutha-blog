@@ -179,10 +179,13 @@ Registered kernel 'Swift' as 'swift'!
 (swift-tensorflow) vkartz@ubuntu-dl:~$ jupyter-notebook
 ```
 
+Now you can open a New Jupyter Notebook as Swift: <br>
 <p align="center">
-<img src="/nn_style/swift-on-jupyter.png" alt="New Jupyter Notebook"/>
+<img src="/nn_style/swift-on-jupyter.PNG" alt="New Jupyter Notebook"/>
 </p>
 
+<br>
+
 <p align="center">
-<img src="/nn_style/swift-on-jupyter-2.png" alt="New Jupyter Notebook Test Script"/>
+<img src="/nn_style/swift-on-jupyter-2.PNG" alt="New Jupyter Notebook Test Script"/>
 </p>
